@@ -7,10 +7,7 @@ import (
 
 func main() {
 	var intCodes []int
-	pointer := 0
-	calcOnePointer := 0
-	calcTwoPointer := 0
-	resultPointer := 0
+	pointer, calcOnePointer, calcTwoPointer, resultPointer := 0, 0, 0, 0
 
 	file, err := os.Open("./input.txt")
 	if err != nil {

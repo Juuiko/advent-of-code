@@ -7,10 +7,7 @@ import (
 
 func main() {
 	var intCodesFile []int
-	pointer := 0
-	calcOnePointer := 0
-	calcTwoPointer := 0
-	resultPointer := 0
+	pointer, calcOnePointer, calcTwoPointer, resultPointer := 0, 0, 0, 0
 
 	file, err := os.Open("./input.txt")
 	if err != nil {
@@ -36,7 +33,7 @@ func main() {
 				if resultPointer <= len(intCodes) {
 					calcOnePointer = intCodes[pointer+1]
 					calcTwoPointer = intCodes[pointer+2]
-					if calcOnePointer <= len(intCodes) && calcTwoPointer <= len(intCodes) {
+					if calcOnePointer <= len(intCodes) {
 						intCodes[resultPointer] = intCodes[calcOnePointer] + intCodes[calcTwoPointer]
 					}
 				}
@@ -46,7 +43,7 @@ func main() {
 				if resultPointer <= len(intCodes) {
 					calcOnePointer = intCodes[pointer+1]
 					calcTwoPointer = intCodes[pointer+2]
-					if calcOnePointer <= len(intCodes) && calcTwoPointer <= len(intCodes) && calcTwoPointer > 0 {
+					if calcOnePointer <= len(intCodes) {
 						intCodes[resultPointer] = intCodes[calcOnePointer] * intCodes[calcTwoPointer]
 					}
 				}
